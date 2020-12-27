@@ -1,0 +1,8 @@
+SELECT name 
+FROM students
+WHERE exams_name = ( SELECT exams_name 
+		   FROM exams 
+		   WHERE grade = ( SELECT top10OrNot().grades_moy
+				    FROM grades 
+				    ORDER BY grade_moy)
+				     
